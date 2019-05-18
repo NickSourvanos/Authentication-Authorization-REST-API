@@ -1,0 +1,30 @@
+{
+    "post": {
+        "summary": "User Login",
+        "produces": [
+            "application/json"
+        ],
+        "consumes": "application/x-www-form-urlencoded",
+        "parameters": [
+            {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "schema": {
+                    "$ref": "#/definitions/UserLogin"
+                }
+            }
+        ],
+        "responses": {
+            "200": {
+                "description": "Token"
+            },
+            "400": {
+                "description": "User does not exist"
+            },
+            "403": {
+                "description": "Invalid password"
+            }
+        }
+    }
+}

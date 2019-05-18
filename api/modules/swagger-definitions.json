@@ -1,0 +1,18 @@
+{
+    "User": {
+        "$ref": "./users/schema.json"
+    },
+    "UserLogin": {
+        "required": ["email", "password"],
+        "properties": {
+            "email": {
+                "type": "string",
+                "pattern": ".+@.+"
+            },
+            "password": {
+                "type": "string",
+                "pattern": "[a-z0-9]+"
+            }
+        }
+    }
+}

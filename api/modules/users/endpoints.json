@@ -1,0 +1,54 @@
+{
+  "get": {
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+    "summary": "Gets a list of users.",
+    "produces": [
+      "application/json"
+    ],
+    "responses": {
+      "200": {
+        "description": "List of users",
+        "schema": {
+          "type": "array",
+          "$ref": "#/definitions/User"
+        }
+      }
+    }
+  },
+  "post": {
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+    "summary": "Creates a new user",
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "in": "body",
+        "name": "body",
+        "required": "false",
+        "schema": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "User created successfully"
+      },
+      "409": {
+        "description": "User exists"
+      },
+      "400": {
+        "description": "Invalid user supplied"
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Authentication-Authorization API"
+    },
+    "schemes":["http"],
+    "host": "${HOST_NAME}:${PORT}",
+    "basePath": "${API_BASE}",
+    "securityDefinitions": {
+      "Bearer": {
+        "description": "JWT token required to access the api",
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "paths": { "$ref": "./api/modules/swagger-paths.json" },
+    "definitions": { "$ref": "./api/modules/swagger-definitions.json" }
+    
+}

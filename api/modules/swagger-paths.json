@@ -1,0 +1,6 @@
+{    
+    "/user": { "$ref": "./users/endpoints.json" },
+    "/user/{id}": { "$ref": "./users/endpoints-id.json" },
+    "/user/login": { "$ref": "./login/endpoints.json" },
+    "/user/reset_password/{id}": { "$ref": "./users/endpoint-pid.json" }
+}

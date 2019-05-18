@@ -1,0 +1,83 @@
+{
+  "get": {
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+    "summary": "Find a specific user",
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "name": "id",
+        "in": "path", 
+        "type": "number",
+        "required": true
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "Find user",
+        "schema": {
+          "$ref": "#definitions/User"
+        }
+      },
+      "400": {
+        "description": "Invalid user id"
+      }
+    }
+  },
+  "put": {
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "summary": "Update user",
+    "parameters": [
+      { "name": "id", "in": "path", "type": "number", "required": true },
+      { "name": "user", "in": "body", "schema": { "$ref": "#/definitions/User" }, "required": true }
+    ],
+    "responses": {
+      "200": {
+        "description": "Update user",
+        "schema": {
+          "$ref": "#definitions/User"
+        }
+      },
+      "400": {
+        "description": "Invalid user id"
+      }
+    }
+  },
+  "delete": {
+    "security": [
+      {
+        "Bearer": []
+      }
+    ],
+    "summary": "Delete user",
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      { "name": "id", "in": "path", "type": "number", "required": true }
+    ],
+    "responses": {
+      "204": {
+        "description": "Delete user",
+        "schema": {
+          "$ref": "#definitions/User"
+        }
+      },
+      "400": {
+        "description": "Invalid user id"
+      }
+    }
+  }
+}
